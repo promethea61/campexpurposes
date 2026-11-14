@@ -79,7 +79,7 @@
   .hero-art img{width:100%;height:100%;object-fit:cover}
   @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
   .type-label{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px}
-  .hero-title{font-family:'Arial',monospace;font-size:clamp(36px,5vw,72px);font-weight:740;line-height:1;letter-spacing:-2px;margin-bottom:16px;background:linear-gradient(135deg,#fff 0%,var(--green) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+  .hero-title{font-family:'Space Mono',monospace;font-size:clamp(36px,5vw,72px);font-weight:700;line-height:1;letter-spacing:-2px;margin-bottom:16px;background:linear-gradient(135deg,#fff 0%,var(--green) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
   .hero-meta{font-size:14px;color:var(--text-2);display:flex;align-items:center;gap:6px;flex-wrap:wrap}
   .hero-meta strong{color:var(--text);font-weight:600}
   .dot{color:var(--text-3)}
@@ -577,7 +577,7 @@
     <div style="font-size:56px;margin-bottom:12px">📸</div>
     <h2>Hai, Promethea! 👋</h2>
     <p>Punya foto atau video kenangan<br>bareng teman-teman?<br><br><strong style="color:var(--green)">Upload momen kamu di sini!</strong><br>Abadikan cerita kita bersama.</p>
-    <button class="welcome-btn" onclick="closeWelcome();openUploadForm()">📤 Upload Momen Sekarang</button>
+    <button class="welcome-btn"onclick="closeWelcome();openUploadForm()">📤 Upload Momen Sekarang</button>
     <div class="welcome-skip" onclick="closeWelcome()">Nanti saja →</div>
   </div>
 </div>
@@ -804,6 +804,7 @@
           </div>
         </a>
       </div>
+        </div>
         <div class="stats-grid">
           <div class="stat-card"><div class="stat-n">12</div><div class="stat-l">Songs</div></div>
           <div class="stat-card"><div class="stat-n">26280</div><div class="stat-l">Hours</div></div>
@@ -841,7 +842,7 @@
       <div id="searchResults"></div>
       <h3 style="font-size:18px;font-weight:700;margin-bottom:16px">Jelajahi Kategori</h3>
       <div class="cat-grid">
-        <div class="cat-card g1" onclick="showPage('home');switchTab('songs')"><div style="font-size:36px;margin-bottom:8px">🎵</div>Songs</div>
+        <div class="cat-card g1" onclick="showPage('home');switchTab('songs')"><div style="font-size:36px;margin-bottom:8px">����</div>Songs</div>
         <div class="cat-card g2" onclick="showPage('home');switchTab('memories')"><div style="font-size:36px;margin-bottom:8px">📸</div>Memories</div>
         <div class="cat-card g3" onclick="showPage('home');switchTab('about')"><div style="font-size:36px;margin-bottom:8px">📖</div>About Us</div>
         <div class="cat-card g4" onclick="showPage('home');switchTab('members')"><div style="font-size:36px;margin-bottom:8px">👥</div>Members</div>
@@ -1072,9 +1073,7 @@ function shareMv() {
   else { navigator.clipboard?.writeText(location.href); toast('🔗 Link disalin!'); }
 }
 
-let _mvSwipeBound=false;
 function setupMvSwipe() {
-  if(_mvSwipeBound) return; _mvSwipeBound=true;
   const v=document.getElementById('memoryViewer');
   v.addEventListener('touchstart',e=>{mvTouchStartX=e.touches[0].clientX;mvTouchStartY=e.touches[0].clientY;},{passive:true});
   v.addEventListener('touchend',e=>{
@@ -1292,6 +1291,10 @@ if(!localStorage.getItem('seenWelcome')){
   }, 1000);
 }
 
+function closeWelcome(){document.getElementById('welcomeModal').classList.remove('open');}
+setTimeout(()=>{
+  document.getElementById('welcomeModal').classList.add('open');
+}, 1000);
 
 </script>
 
@@ -1306,7 +1309,6 @@ if(!localStorage.getItem('seenWelcome')){
 <script src="nowplaying_sidebar.js"></script>
 <script src="hero_bg.js"></script>
 <script src="memories_pulse.js"></script>
-<script src="campus_expo.js"></script>
 
 
 
