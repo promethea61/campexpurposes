@@ -117,8 +117,8 @@
   // Tabel & aturan keamanan: jalankan file supabase_setup.sql di SQL Editor Supabase.
   // Kalau masih kosong, wall jalan dalam MODE DEMO (pesan hanya tersimpan di browser sendiri).
   const SUPABASE = {
-    url: '',   // contoh: 'https://abcdxyz.supabase.co'
-    key: '',   // contoh: 'eyJhbGciOi...'
+    url: '',   // contoh: 'https://pamblvfygoeqksxfcefx.supabase.co/rest/v1/'
+    key: '',   // contoh: 'sb_publishable_vA9Im8QxW26kyhdi5Q0aUg_9pNuksqs'
     table: 'confessions',
     pageSize: 12,
     cooldownSec: 30,   // jeda antar kiriman per pengunjung (anti-spam ringan)
